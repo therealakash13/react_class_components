@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: darkslategray;
+  font-size: 100%;
+  font-weight: 700;
+  color: azure;
+  text-align: center;
+  min-height: 95vh;
+  font-family: 'Poppins';
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 2rem auto;
+}
