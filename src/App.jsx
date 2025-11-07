@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Test from "./Test";
 
 class App extends React.Component {
   render() {
@@ -7,6 +8,9 @@ class App extends React.Component {
       <>
         <Header username="Akash" />
         <Greeting />
+        <Test name="Akash" />
+        <Counter />
+        <Button />
       </>
     );
   }
@@ -36,6 +40,42 @@ class Greeting extends React.Component {
     }
 
     return <h1>Good {timeOfDay} to you, sir or madam...</h1>;
+  }
+}
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 }; // initialize state
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Increase
+        </button>
+        <button onClick={() => this.setState({ count: this.state.count - 1 })}>
+          Decrease
+        </button>
+      </div>
+    );
+  }
+}
+
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { num: 0 };
+  }
+
+  increment = () => {
+    console.log(this.state.num);
+  };
+
+  render() {
+    return <button onClick={this.increment}>Click Me</button>;
   }
 }
 
