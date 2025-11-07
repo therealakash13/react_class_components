@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Test from "./Test";
 
@@ -11,6 +11,7 @@ class App extends React.Component {
         <Test name="Akash" />
         <Counter />
         <Button />
+        <FunctionalCounter name="Akash" />
       </>
     );
   }
@@ -77,6 +78,17 @@ class Button extends React.Component {
   render() {
     return <button onClick={this.increment}>Click Me</button>;
   }
+}
+
+function FunctionalCounter(props) {
+  const [counter, setCounter] = useState(0);
+  return (
+    <div>
+      <h1>Welcome {props.name}</h1>
+      <h2>Counter: {counter}</h2>
+      <button onClick={() => setCounter(counter + 1)}>Increase</button>
+    </div>
+  );
 }
 
 export default App;
