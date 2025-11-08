@@ -12,6 +12,7 @@ class App extends React.Component {
         <Counter />
         <Button />
         <FunctionalCounter name="Akash" />
+        <LoginForm />
       </>
     );
   }
@@ -87,6 +88,34 @@ function FunctionalCounter(props) {
       <h1>Welcome {props.name}</h1>
       <h2>Counter: {counter}</h2>
       <button onClick={() => setCounter(counter + 1)}>Increase</button>
+    </div>
+  );
+}
+
+function LoginForm() {
+  const [fullName, setFullName] = useState({ fName: "", lName: "" });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFullName((prev) => ({ ...prev, [name]: value }));
+  }
+  return (
+    <div>
+      <h2>
+        Hello. {fullName.fName} {fullName.lName}
+      </h2>
+      <input
+        type="text"
+        name="fName"
+        value={fullName.fName}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="lName"
+        value={fullName.lName}
+        onChange={handleChange}
+      />
     </div>
   );
 }

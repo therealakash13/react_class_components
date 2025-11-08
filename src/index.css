@@ -17,3 +17,25 @@ h1 {
   font-size: 3rem;
   margin: 2rem auto;
 }
+
+input{
+  outline: none;
+  padding: 1rem ;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+button{
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+button:hover{
+  cursor: pointer;
+  outline: 1px solid aqua;
+  background-color: black;
+color: aqua;
+}
